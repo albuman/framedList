@@ -1,0 +1,23 @@
+{
+  "name": "framed-list",
+  "description": "Infinite scrolling list by chunks",
+  "main": "framedList.js",
+  "version": "1.0.0",
+  "authors": [
+    "Roman Sainchuk"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "virtual-scroll",
+    "inifinite-scroll",
+    "virtual-repeat"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
