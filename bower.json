@@ -2,7 +2,7 @@
   "name": "framed-list",
   "description": "Infinite scrolling list by chunks",
   "main": "framedList.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     "Roman Sainchuk"
   ],
