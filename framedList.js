@@ -87,41 +87,6 @@ var framedList =
 /************************************************************************/
 /******/ ({
 
-/***/ "../node_modules/webpack/buildin/harmony-module.js":
-/*!*********************************************************!*\
-  !*** ../node_modules/webpack/buildin/harmony-module.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function(originalModule) {
-	if (!originalModule.webpackPolyfill) {
-		var module = Object.create(originalModule);
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		Object.defineProperty(module, "exports", {
-			enumerable: true
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-
 /***/ "../src/core/directives/index.js":
 /*!***************************************!*\
   !*** ../src/core/directives/index.js ***!
@@ -288,7 +253,7 @@ const utils = ['$timeout', ($timeout) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core */ "../src/core/index.js");
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core */ "../src/core/index.js");
 /* harmony import */ var _lazy_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lazy-list */ "../src/lazy-list/index.js");
 /* harmony import */ var _list__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./list */ "../src/list/index.js");
 /* harmony import */ var _list_item__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./list-item */ "../src/list-item/index.js");
@@ -299,7 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-module.exports = angular.module('framedList', [
+angular.module('framedList', [
     _core__WEBPACK_IMPORTED_MODULE_0__["coreModule"].name,
     _list_item__WEBPACK_IMPORTED_MODULE_3__["listItemModule"].name,
     _list__WEBPACK_IMPORTED_MODULE_2__["listModule"].name,
@@ -321,7 +286,6 @@ module.exports = angular.module('framedList', [
 // ListTest.$inject = ['$scope', '$filter', 'utils'];
 //
 // app.controller('ListTest', ListTest);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "../node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
