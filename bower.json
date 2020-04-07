@@ -2,7 +2,7 @@
   "name": "framed-list",
   "description": "Infinite scrolling list by chunks",
   "main": "framedList.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     "Roman Sainchuk"
   ],
@@ -10,6 +10,7 @@
   "keywords": [
     "virtual-scroll",
     "inifinite-scroll",
+
     "virtual-repeat"
   ],
   "homepage": "",
