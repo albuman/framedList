@@ -1,4 +1,3 @@
-var framedList =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -98,7 +97,7 @@ var framedList =
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".main {\n    width: 300px;\n}\n\n.lazy-list__search {\n    display: block;\n    margin: 10px 0;\n    width: 100%;\n    line-height: 2em;\n}\n\n.wrapper {\n    --border-color: #dddddd;\n    --border-radius: 3px;\n\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n    height: 50%;\n    position: relative;\n}\n\n.list {\n    overflow: auto;\n}\n\n.to-top,\n.to-bottom {\n    position: absolute;\n    height: unset;\n    width: 100%;\n    flex: 1 1 auto;\n    text-align: center;\n    cursor: pointer;\n    transition: .5s opacity;\n    opacity: .3;\n}\n\n.arrow-top,\n.arrow-bottom {\n    border: 1px solid black;\n    border-right: none;\n    border-bottom: none;\n    width: 10px;\n    height: 10px;\n    margin: auto;\n}\n\n.arrow-top {\n    transform: rotate(45deg);\n}\n\n.arrow-bottom {\n    transform: rotate(225deg);\n}\n\n.to-top:hover {\n    opacity: 1;\n    background: linear-gradient(to bottom, white 0%, white 80%, transparent 100%);\n}\n.to-bottom:hover {\n    opacity: 1;\n    background: linear-gradient(to top, white 0%, white 80%, transparent 100%);\n}\n\n.to-top {\n    top: 0;\n    background: linear-gradient(to bottom, white 0%, white 10%, transparent 100%);\n}\n\n.to-bottom {\n    bottom: 0;\n    background: linear-gradient(to top, white 0%, white 10%, transparent 100%);\n}\n\n.item {\n    padding: 10px;\n    border-radius: var(--border-radius);\n    border: 1px solid var(--border-color);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin: 4px;\n}", ""]);
+exports.push([module.i, ".main {\n    width: 300px;\n}\n\n.lazy-list__search {\n    display: block;\n    margin: 10px 0;\n    width: 100%;\n    line-height: 2em;\n}\n\n.wrapper {\n    --border-color: #dddddd;\n    --border-radius: 3px;\n\n    box-sizing: border-box;\n    display: flex;\n    flex-direction: column;\n    height: 90%;\n    position: relative;\n}\n\n.list {\n    overflow: auto;\n}\n\n.to-top,\n.to-bottom {\n    position: absolute;\n    height: unset;\n    width: 100%;\n    flex: 1 1 auto;\n    text-align: center;\n    cursor: pointer;\n    transition: .5s opacity;\n    opacity: .3;\n}\n\n.arrow-top,\n.arrow-bottom {\n    border: 1px solid black;\n    border-right: none;\n    border-bottom: none;\n    width: 10px;\n    height: 10px;\n    margin: auto;\n}\n\n.arrow-top {\n    transform: rotate(45deg);\n}\n\n.arrow-bottom {\n    transform: rotate(225deg);\n}\n\n.to-top:hover {\n    opacity: 1;\n    background: linear-gradient(to bottom, white 0%, white 80%, transparent 100%);\n}\n.to-bottom:hover {\n    opacity: 1;\n    background: linear-gradient(to top, white 0%, white 80%, transparent 100%);\n}\n\n.to-top {\n    top: 0;\n    background: linear-gradient(to bottom, white 0%, white 10%, transparent 100%);\n}\n\n.to-bottom {\n    bottom: 0;\n    background: linear-gradient(to top, white 0%, white 10%, transparent 100%);\n}\n\n.item {\n    padding: 10px;\n    border-radius: var(--border-radius);\n    border: 1px solid var(--border-color);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin: 4px;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -667,28 +666,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-angular.module('framedList', [
+const app = angular.module('framedList', [
     _core__WEBPACK_IMPORTED_MODULE_0__["coreModule"].name,
     _list_item__WEBPACK_IMPORTED_MODULE_3__["listItemModule"].name,
     _list__WEBPACK_IMPORTED_MODULE_2__["listModule"].name,
     _lazy_list__WEBPACK_IMPORTED_MODULE_1__["lazyListModule"].name
 ]);
 
-// function ListTest($scope, $filter, utils) {
-//     this.list = (new Array(50000)).fill(1).map((_, idx) => `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, porro. ${idx}`);
-//     this.filtered = this.list;
-//     const filter = $filter('filter');
-//     this.query = '';
-//
-//     this.onQuery = utils.debounce(() => {
-//         this.filtered = filter(this.list, this.query);
-//     }, 500);
-//
-// }
-//
-// ListTest.$inject = ['$scope', '$filter', 'utils'];
-//
-// app.controller('ListTest', ListTest);
+function ListTest($scope, $filter, utils) {
+    this.list = (new Array(50000)).fill(1).map((_, idx) => `Lorem ipsum dolor sit amet consectetur, adipisicing elit. ${idx}`);
+    this.filtered = this.list;
+    const filter = $filter('filter');
+    this.query = '';
+
+    this.onQuery = utils.debounce(() => {
+        this.filtered = filter(this.list, this.query);
+    }, 500);
+
+}
+
+ListTest.$inject = ['$scope', '$filter', 'utils'];
+
+app.controller('ListTest', ListTest);
 
 /***/ }),
 
@@ -915,7 +914,7 @@ const lazyListDirective = ['$parse', '$window', 'utils', ($parse, $window, utils
                         if(!prevElement) {
                             break;
                         }
-                        
+
                         const {previousElementSibling} = prevElement;
 
                         if(!previousElementSibling) {
@@ -925,9 +924,13 @@ const lazyListDirective = ['$parse', '$window', 'utils', ($parse, $window, utils
                         prevElement = previousElementSibling;
                     }
 
+                    if(!prevElement) {
+                        return;
+                    }
+
                     if (listMinHeight < prevElement.offsetTop) {
                         scope.$apply(() => {
-                            tooBigBatchLength();
+                            // tooBigBatchLength();
                             listTooLong(scope);
                         });
                     }
@@ -939,10 +942,10 @@ const lazyListDirective = ['$parse', '$window', 'utils', ($parse, $window, utils
             angular.element($window).on('resize', adjustListHeight);
 
             watchers.push(
-                scope.$watch(attrs.lazyList, (list) => {
+                scope.$watchCollection(attrs.lazyList, utils.throttle((list) => {
                     fullList = list;
                     initBatchedList();
-                })
+                }, 500))
             );
 
             watchers.push(
@@ -1071,7 +1074,7 @@ const listDirective = ['$parse', '$log', ($parse, $log) => {
                 this.lastListItem = null;
                 this.MIN_EDGE = 1;
                 this.ADD_COUNT_IF_UNSCROLLABLE = 2;
-                this.MIN_SCROLLBAR_FACTOR = 2;
+                this.MIN_SCROLLBAR_FACTOR = 3;
                 this.DEFAULT_BATCH_LENGTH = 20;
             };
         },
